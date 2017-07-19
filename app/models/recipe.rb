@@ -6,6 +6,7 @@ class Recipe < ApplicationRecord
   has_many :users, through: :reviews
 
   belongs_to :user
+  
   accepts_nested_attributes_for :ingredients_recipes, allow_destroy: true, reject_if: :all_blank
 
   mount_uploader :image, ImageUploader
